@@ -6,7 +6,7 @@ contributes:
   formats:
     revealjs:
       title-slide-attributes:
-        data-background-image: assets/page_garde_static2.svg
+        data-background-image: assets/page_garde_dynamic.svg
         data-background-opacity: "1"
         data-background-color: "#ffffff"
       height: 900
