@@ -1,0 +1,218 @@
+/*-- scss:defaults --*/
+
+/* TODO: Customize presentation appearance by setting SCSS variables */
+/* See https://quarto.org/docs/presentations/revealjs/themes.html#customizing-themes */
+@import url(https://fonts.googleapis.com/css?family=Spectral:wght@400;500);
+@font-face {
+  font-family: 'Marianne', Spectral;
+}
+
+$font-family-sans-serif: "Marianne", Regular, serif !default;
+
+// Color system
+$white:    #fff !default;
+$gray-100: #F4F4F4 !default;
+$gray-200: #E9E9E9 !default;
+$gray-300: #D3D3D3 !default;
+$gray-400: #C7C7C7 !default;
+$gray-500: #A6A6A6 !default;
+$gray-600: #909090 !default;
+$gray-700: #424242 !default;
+$gray-800: #373737 !default;
+$gray-900: #2C2C2C !default;
+$black:    #000 !default;
+$blue1:    #003A76 !default;
+$blue2:    #0083CB !default;
+$blue3:    #00A6E2 !default;
+$blue4:    #5BC5F2 !default;
+$blue5:    #99D7F7 !default;
+$green1:    #0E823A !default;
+$green2:    #04A64B !default;
+$green3:    #6AB96F !default;
+$green4:    #9FCA7E !default;
+$green5:    #C4DB9B !default;
+$brown1:    #564949 !default;
+$brown2:    #9A7B67 !default;
+$brown3:    #CC9F72 !default;
+$brown4:    #EAC198 !default;
+$red:    #C2133E ;
+$orange1:    #ED6A53 !default;
+$orange2:    #F39655 !default;
+$yellow:    #FFD744 !default;
+
+$primary:       $blue1 !default;
+$secondary:     $blue2 !default;
+$success:       $green2 !default;
+$info:          $blue3 !default;
+$warning:       $orange1 !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+// Document parameters
+$body-bg: #fff;
+$body-color: $black;
+$link-color: $green2;
+$selection-bg: $yellow !default;
+$presentation-heading-color: $blue1;
+$presentation-heading-line-height: 1.2;
+$presentation-h1-font-size: 1.4em;
+$presentation-title-slide-text-align: left;
+
+// font size
+$presentation-h1-font-size: 2.2em;
+$presentation-h2-font-size: 1.8em;
+$presentation-h3-font-size: 1.5em;
+$presentation-h4-font-size: 1.1em;
+$presentation-font-size-root: 35px;
+$presentation-line-height: 1.5em;
+
+$code-block-border-color: $gray-100;
+$code-block-font-size: 0.7em;
+
+
+/*-- scss:rules --*/
+
+.theme-slide-end {
+  
+  &:is(.slide-background) {
+  background-color: white;
+  background-image: url('../../../../../page_fin_static.svg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
+  h2 {
+    color: white !important; // or #5CB4C2
+    font-size: 2em;
+    // align-content
+    text-align: left;
+    margin-top: 30%;
+    margin-left: 2%;
+  }
+  
+  p {
+    margin-left: 2%;
+  }
+
+}
+
+
+// color palette for text
+.blue {
+  color: $blue2;
+  font-weight: bold;
+}
+
+.green {
+  color: $green2;
+  font-weight: bold;
+}
+
+.brown {
+  color: $brown2;
+  font-weight: bold;
+}
+
+.red {
+  color: $red;
+  font-weight: bold;
+}
+.orange {
+  color: $orange1;
+  font-weight: bold;
+}
+
+// progress bar
+
+.reveal .progress {
+	color: $blue4;
+	height: 0.7%;
+}
+
+// blockquote color bar on left
+.reveal .slide blockquote {
+  border-color: $green1;
+  border-width: 5px;
+}
+
+// setting for title slide background with full image
+.reveal .slide-background.quarto-title-block {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.reveal .slide-logo {
+  display: none;
+}
+
+// setting title slide
+#title-slide {
+
+    .title, .subtitle, .institute, .quarto-title-authors, .date {
+        color: $black !important;
+        text-shadow: none;
+        margin-left: 5%;
+        
+    }
+
+    .title {
+        font-family: "Marianne";
+        margin-top: 10%;
+    }
+
+    .subtitle {
+        font-style: italic;        
+        font-family: "Marianne";
+    }
+
+    .quarto-title-authors {
+        font-family: "Marianne";
+
+    }
+    
+}
+
+// remove slide number on title slide
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+
+.reveal.has-logo .slide-number {
+    bottom: 10px !important;
+    right: 10px !important;
+    top: unset !important;
+    color: $body-color !important;
+}
+
+
+.reveal .slide-logo{
+  top: 10px;
+  border: none;
+  z-index: -999 !important;
+}
+
+// incremental last fragment
+.highlight-last  {
+  .current-fragment {
+    color: $blue2;
+  }
+}
+
+// style output code
+.reveal pre code {
+  background-color: #2e3440;
+  color: #d8dee9;
+}
+
+.reveal div.sourceCode {
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 20px !important;
+}
+
+// leaflet map center
+.html-widget {
+    margin: auto;
+}

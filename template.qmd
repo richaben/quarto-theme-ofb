@@ -1,0 +1,113 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "John Doe"
+institute: "Service XXX, OFB DR XXX"
+date: last-modified
+format:
+  quarto-theme-ofb-revealjs: default
+engine: knitr
+execute:
+  echo: true
+  message: false
+  warning: false
+---
+
+## Color scheme
+
+- Say it with colours → [bleu]{.blue} ; [vert]{.green} ; [marron]{.brown} ; [rouge]{.red} ; [orange]{.orange}
+
+
+
+. . .
+
+
+### Lists
+
+::: {.incremental .highlight-last}
+**Bullet list:**
+
+- thing 1
+- thing 2
+:::
+
+:::: {.fragment}
+
+**Ordered list:**
+
+1. thing 1
+1. thing 2
+
+::::
+
+## Code
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+library(dplyr)
+starwars %>% 
+  mutate(name, bmi = mass / ((height / 100)  ^ 2)) %>%
+  select(name:mass, bmi)
+```
+
+## Code with dataframe output
+
+```{r}
+#| echo: false
+#| code-line-numbers: false
+#| 
+DT::datatable(
+  head(iris, 100), 
+  fillContainer = F, 
+  rownames = FALSE
+)
+```
+
+## Leaflet map
+
+<br>
+
+```{r}
+#| echo: false
+#| fig.width: 8
+library(leaflet)
+
+content <- paste(sep = "<br/>",
+  "<b><a href='https://www.ofb.gouv.fr/normandie'>OFB DR Normandie</a></b>",
+  "Where I am !"
+)
+
+leaflet() %>% addTiles(options = providerTileOptions(minZoom=15, maxZoom=18)) %>%
+  addPopups(-0.681293,49.038357, content,
+    options = popupOptions(closeButton = FALSE)
+  )
+```
+
+## Block quotes
+
+> Dorothy followed her through many of the beautiful rooms in her
+> castle.
+
+## Callouts
+
+:::{.callout-note}
+A note
+:::
+
+:::{.callout-warning}
+A warning
+:::
+
+:::{.callout-important}
+Something important
+:::
+
+:::{.callout-tip}
+This is a good idea
+:::
+
+## Merci de votre attention {.theme-slide-end}
+
+Slides made with [quarto](https://quarto.org/) and `r fontawesome::fa("r-project", fill = "steelblue")`.
